@@ -1,0 +1,216 @@
+body, h1, h2, h3, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(246, 32, 103);
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    color: #0c0c0c;
+}
+
+header .search {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+header .search input {
+    flex-grow: 1;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+header .search button {
+    background-color: #f76116;
+    color: #fff;
+    border: none;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+
+header .search button:hover {
+    background-color: #777;
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+}
+
+header .icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    position: relative;
+}
+
+header .icons .count {
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.banner {
+    background: url('/css/fashionsale.jpg') no-repeat center center/cover;
+    height: 500px;
+    margin: 20px 0;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.product {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    margin-bottom: 15px;
+    color:#555;
+}
+
+.product-item button {
+    background-color: rgb(246, 32, 103);
+    color:#ddd;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.product-item button:hover {
+    background-color: #8f0433;
+}
+
+.cart-container {
+    display: none;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.cart-item p {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.cart-item button {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.cart-item button:hover {
+    background-color: darkred;
+}
+
+iframe{
+    width:100%;
+    height:300px;
+    border: none;
+}
+
+footer{
+    text-align: center;
+    border: 5px solid gray;
+    background-color: gray;
+    color: #ddd;
+}

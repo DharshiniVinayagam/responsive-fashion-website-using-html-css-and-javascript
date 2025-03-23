@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashone World</title>
+    <link rel="stylesheet" href="fashionworld.css">
+    <script>
+        const cart = [];
+
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function addToCart(product, image) {
+            const productData = { name: product, image: image };
+            cart.push(productData);
+            alert(product + ' added to cart!');
+            updateCartCount();
+        }
+
+        function showCart() {
+            const cartContainer = document.getElementById('cartContainer');
+            cartContainer.innerHTML = '<h1>Your Cart</h1>';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML += '<p>Your cart is empty.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    cartContainer.innerHTML += `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.name}">
+                            <p>${item.name}</p>
+                            <button onclick="removeFromCart(${index})">Remove</button>
+                        </div>`;
+                });
+            }
+
+            cartContainer.style.display = 'block';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            showCart();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Fashone World</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search for products, brands, and more">
+            <button>Search</button>
+        </div>
+        <div class="icons">
+            <a href="#cart" onclick="showCart()">Cart <span class="icon">&#128722;</span><span id="cartCount" class="count">0</span></a>
+        </div>
+    </header>
+
+    <div class="banner"></div>
+
+    <div class="container" id="about" style="background-color: #f8d1de; padding: 20px;">
+        <h2>About Us</h2>
+        <p>Welcome to Fashone World – your ultimate destination for all things fashion! At Fashone World, we believe that fashion is more than just clothing; it’s a powerful form of self-expression, a way to celebrate individuality, and a bridge that connects people across cultures and styles.
+             <br>
+            Who We Are
+            Fashone World is a global fashion platform dedicated to bringing you the latest trends, timeless classics, and everything in between. Our journey began with a simple vision: to create a space where fashion enthusiasts from all walks of life can explore, inspire, and transform their wardrobes effortlessly. From humble beginnings, we’ve grown into a thriving community of designers, stylists, and trendsetters who share a passion for innovative style and sustainable living.
+            <br>
+            What We Offer
+            At Fashone World, we cater to diverse tastes and preferences, ensuring that everyone finds their perfect fit. Our carefully curated collections include:
+            <br>
+            Contemporary Apparel: Stay ahead of the curve with chic and trendy outfits that make heads turn.
+            Timeless Classics: Embrace elegance with pieces that never go out of style.
+            Accessories & Footwear: Complete your look with stunning accessories and comfortable yet stylish footwear.
+            Sustainable Fashion: Shop eco-friendly and ethically made items that align with your values.
+            Our goal is to empower you with choices that make you feel confident, comfortable, and uniquely you.
+            <br>
+            Our Philosophy
+            At the heart of Fashone World lies a commitment to inclusivity, sustainability, and creativity. We believe fashion should be accessible to everyone, regardless of size, age, or background. By partnering with local artisans and ethical manufacturers, we not only support global communities but also ensure that our products are made with care for the planet.
+            <br>
+            Why Choose Fashone World?
+            <br>
+            Quality You Can Trust: We prioritize premium materials and impeccable craftsmanship in every product.
+            Trendy & Timeless: Our collections are thoughtfully designed to help you stay fashionable while embracing your personal style.
+            Customer-Centric Approach: Your satisfaction is our priority, and we’re here to provide you with an unparalleled shopping experience.
+            Global Community: Join a network of fashion lovers who celebrate diversity and creativity.
+            Our Vision
+            Fashone World envisions a world where fashion transcends boundaries and empowers individuals to express their true selves. Whether you’re dressing for a special occasion, revamping your wardrobe, or exploring sustainable options, Fashone World is here to inspire your journey.
+            <br>
+            Join Us
+            Explore our collections and discover how Fashone World can transform your style. Follow us on social media for the latest updates, fashion tips, and exclusive offers. Together, let’s redefine what it means to live fashionably and responsibly.
+            <br>
+            Welcome to Fashone World – where fashion meets passion! </p>
+    </div>
+
+    <div class="container" id="products">
+        <h2>Products</h2>
+
+        <div id="men">
+            <h3>Men's Collection</h3>
+            <div class="product">
+                <div class="product-item">
+                    <img src="/css/mens blaser.jpg" alt="Men's Blazer">
+                    <h4>Men's Blazer</h4>
+                    <p>Price: RS: 25000</p>
+                    <button onclick="addToCart('Men\'s Blazer', '/css/mens-blazer.jpg')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/wedding-wear-designer-mens-sherwani.jpg" alt="Wedding Sherwani">
+                    <h4>Wedding Sherwani</h4>
+                    <p>Price: RS: 40000</p>
+                    <button onclick="addToCart('Wedding Sherwani', '/css/wedding-wear-designer-mens-sherwani.jpg')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/mens shirt.jpg" alt="Men's Casual Shirt">
+                    <h4>Casual Shirt</h4>
+                    <p>Price: RS: 600</p>
+                    <button onclick="addToCart('Casual Shirt', '/css/mens-shirt.jpg')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/mens t-shirt.jpg" alt="Men's T-Shirt">
+                    <h4>T-Shirt</h4>
+                    <p>Price: RS: 400</p>
+                    <button onclick="addToCart('T-Shirt', '/css/mens-t-shirt.jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+         <br>
+        <div id="women">
+            <h3>Women's Collection</h3>
+            <div class="product">
+                <div class="product-item">
+                    <img src="/css/women party wear.jpg" alt="Stylish Shirt">
+                    <h4>Partywear</h4>
+                    <p>Price: RS:625</p>
+                    <button onclick="addToCart('Stylish Shirt', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/women elegant dress.jpeg" alt="Elegant Dress">
+                    <h4>Elegant Dress</h4>
+                    <p>Price: RS:540</p>
+                    <button onclick="addToCart('Elegant Dress', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/women salwar.jpeg" alt="Comfortable Sneakers">
+                    <h4>Salwar</h4>
+                    <p>Price: RS:760</p>
+                    <button onclick="addToCart('Comfortable Sneakers', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/womens saree.jpeg" alt="Elegant Dress">
+                    <h4>Saree</h4>
+                    <p>Price: RS:540</p>
+                    <button onclick="addToCart('Elegant Dress', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="kids">
+            <h3>Kids' Collection</h3>
+            <div class="product">
+                <div class="product-item">
+                    <img src="/css/Kids style.jpeg" alt="Kids' Shirt">
+                    <h4>Kids Style</h4>
+                    <p>Price: RS:250</p>
+                    <button onclick="addToCart('Kids\' Stylish Shirt', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/kids t shirt.jpeg" alt="Kids' Dress">
+                    <h4>Kids T-shirt</h4>
+                    <p>Price: RS:340</p>
+                    <button onclick="addToCart('Kids\' Elegant Dress', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/kids night dress.jpeg" alt="Kids' Sneakers">
+                    <h4>Kids Night Dress</h4>
+                    <p>Price: RS:460</p>
+                    <button onclick="addToCart('Kids\' Comfortable Sneakers', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/kids gown.jpeg" alt="Elegant Dress">
+                    <h4>Kids Gown</h4>
+                    <p>Price: RS:540</p>
+                    <button onclick="addToCart('Elegant Dress', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="accessories">
+            <h3>Accessories</h3>
+            <div class="product">
+                <div class="product-item">
+                    <img src="/css/hat.jpeg" alt="Stylish Hat">
+                    <h4>Stylish Hat</h4>
+                    <p>Price: RS:200</p>
+                    <button onclick="addToCart('Stylish Hat', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/scarf.jpeg" alt="Elegant Scarf">
+                    <h4>Elegant Scarf</h4>
+                    <p>Price: RS:150</p>
+                    <button onclick="addToCart('Elegant Scarf', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/belt.jpeg" alt="Leather Belt">
+                    <h4>Leather Belt</h4>
+                    <p>Price: RS:130</p>
+                    <button onclick="addToCart('Leather Belt', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="/css/jewllery.jpeg" alt="Elegant Dress">
+                    <h4>Jewellery</h4>
+                    <p>Price: RS:740</p>
+                    <button onclick="addToCart('Elegant Dress', 'https://via.placeholder.com/150')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+ </div>
+  
+ <div class="container" id="contact" style="background-color: #d1e8f8; padding: 20px;">
+    <h2>Contact Us</h2>
+    <p>Email: support@fashoneworld.com</p>
+    <p>Phone: 044-2567-4890</p>
+    <p>Address: 123 Fashion Street, Style City, World</p>
+    <p><strong>website:</strong> <a href="https://www.fashionworld.com" target="_blank">fashionworld.com</a></p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434508616!2d144.95565151532173!3d-37.81721497975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577f5f5d542cd0b!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1687608822673!5m2!1sen!2sa">
+   </iframe>
+</div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Fashone World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cartContainer" class="cart-container"></div>
+</body>
+</html>
+
